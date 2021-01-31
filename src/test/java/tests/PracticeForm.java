@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import java.io.File;
+
 import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -45,7 +47,11 @@ public class PracticeForm {
         $("label[for='hobbies-checkbox-2']").click(); //hobbies reading
         $("label[for='hobbies-checkbox-3']").click(); //hobbies music
 
-        $("#uploadPicture").setValue("D:\\Autotests\\qa_guru_homework\\src\\test\\pic\\che.png"); //file
+        File file = new File("src/test/resources/che.png");
+        $("#uploadPicture").uploadFile(file);
+
+
+        //$("#uploadPicture").setValue("D:\\Autotests\\qa_guru_homework\\src\\test\\pic\\che.png"); //file
 
         $("#currentAddress").setValue("г.Москва, ул.Академика Королева, д.12");
 
