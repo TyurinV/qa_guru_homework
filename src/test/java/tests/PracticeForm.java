@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -8,13 +7,11 @@ import org.openqa.selenium.By;
 
 import java.io.File;
 
-import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeForm {
-
 
 
     @BeforeAll
@@ -51,8 +48,6 @@ public class PracticeForm {
         $("#uploadPicture").uploadFile(file);              //file2 of 2
 
 
-
-
         $("#currentAddress").setValue("г.Москва, ул.Академика Королева, д.12");
 
         $("#react-select-3-input").setValue("N").pressEnter();
@@ -72,7 +67,6 @@ public class PracticeForm {
         $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[8]/td[2]")).shouldHave(text("che.png")); // picture
         $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[9]/td[2]")).shouldHave(text("г.Москва, ул.Академика Королева, д.12")); //address
         $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[10]/td[2]")).shouldHave(text("NCR Gurgaon")); //state and city
-
 
 
     }
