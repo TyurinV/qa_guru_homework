@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -24,7 +25,7 @@ public class PracticeForm {
         open("https://demoqa.com/automation-practice-form");
         $(".main-header").shouldHave(text("Practice Form"));
 
-        $("#firstName").setValue("Федя");
+        $("#firstName").setValue("Фома");
         $("#lastName").setValue("Киняев");
         $("#userEmail").setValue("fedya@kinyaev.ru");
 
@@ -54,6 +55,18 @@ public class PracticeForm {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[1]/td[2]")).shouldHave(text("Фома Киняев"));
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td[2]")).shouldHave(text("fedya@kinyaev.ru")); //mail
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[3]/td[2]")).shouldHave(text("Other")); //gender
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[4]/td[2]")).shouldHave(text("5435434355")); // mobile
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[5]/td[2]")).shouldHave(text("14 April,1975")); // birth
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[6]/td[2]")).shouldHave(text("Hindi")); // Subjects
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[7]/td[2]")).shouldHave(text("Sports, Reading, Music")); // Hobbies
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[8]/td[2]")).shouldHave(text("che.png")); // picture
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[9]/td[2]")).shouldHave(text("г.Москва, ул.Академика Королева, д.12")); //address
+        $(By.xpath("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[10]/td[2]")).shouldHave(text("NCR Gurgaon")); //state and city
+
 
 
     }
