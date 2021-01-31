@@ -47,11 +47,11 @@ public class PracticeForm {
         $("label[for='hobbies-checkbox-2']").click(); //hobbies reading
         $("label[for='hobbies-checkbox-3']").click(); //hobbies music
 
-        File file = new File("src/test/resources/che.png");
-        $("#uploadPicture").uploadFile(file);
+        File file = new File("src/test/resources/che.png"); //file1 of 2
+        $("#uploadPicture").uploadFile(file);              //file2 of 2
 
 
-        //$("#uploadPicture").setValue("D:\\Autotests\\qa_guru_homework\\src\\test\\pic\\che.png"); //file
+
 
         $("#currentAddress").setValue("г.Москва, ул.Академика Королева, д.12");
 
