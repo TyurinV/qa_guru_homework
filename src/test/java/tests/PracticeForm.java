@@ -23,16 +23,16 @@ public class PracticeForm {
     void textFields() {
 
         open("https://demoqa.com/automation-practice-form");
-       String firstName = getRandomString(10),
+        String firstName = getRandomString(10),
                 lastName = getRandomString(9),
                 email = getRandomEmail(),
-                gender = getRandomGender(1,1),
+                gender = getRandomGender(1, 1),
                 mobile = getRandomPhone(),
-                dayOfBirth =  getRandomInt(10,28) + "",
-                monthOfBirth = getRandomMonth(1,1),
+                dayOfBirth = getRandomInt(10, 28) + "",
+                monthOfBirth = getRandomMonth(1, 1),
                 yearOfBirth = getRandomInt(1950, 2000) + "",
-                subject1 = getRandomSubjects(1,1),
-                subject2 = getRandomSubjects(1,1),
+                subject1 = getRandomSubjects(1, 1),
+                subject2 = getRandomSubjects(1, 1),
                 hobby1 = "Sports",
                 hobby2 = "Reading",
                 hobby3 = "Music",
@@ -70,7 +70,7 @@ public class PracticeForm {
         $x("//td[text()='Gender']").parent().shouldHave(text(gender));
         $x("//td[text()='Mobile']").parent().shouldHave(text(mobile));
         $x("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
-        $x("//td[text()='Subjects']").parent().shouldHave(text(subject1+ ", "+ subject2));
+        $x("//td[text()='Subjects']").parent().shouldHave(text(subject1 + ", " + subject2));
         $x("//td[text()='Hobbies']").parent().shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3));
         $x("//td[text()='Picture']").parent().shouldHave(text(picture));
         $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
