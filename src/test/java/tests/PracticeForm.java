@@ -23,7 +23,7 @@ public class PracticeForm {
     void textFields() {
 
         open("https://demoqa.com/automation-practice-form");
-        String firstName = getRandomString(10),
+       String firstName = getRandomString(10),
                 lastName = getRandomString(9),
                 email = getRandomEmail(),
                 gender = getRandomGender(1,1),
@@ -39,7 +39,7 @@ public class PracticeForm {
                 picture = "che.png",
                 currentAddress = getRandomString(50),
                 state = "NCR", // могу зарандомить, но тогда city не могу, пытался через if else - не вышло.
-                city = "Dehli";
+                city = "Delhi";
 
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
@@ -65,16 +65,16 @@ public class PracticeForm {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td[2]").shouldHave(text(email)); //mail
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[3]/td[2]").shouldHave(text(gender)); //gender
-        $x("/html/body/div[1]/div/div/div[2]/div[2]/div[1]/form/div[4]/div[2]").shouldHave(text(mobile)); // mobile
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[5]/td[2]").shouldHave(text(dayOfBirth+" "+ monthOfBirth + ","+ yearOfBirth)); // birth
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[6]/td[2]").shouldHave(text(subject1+ ", "+ subject2)); // Subjects
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[7]/td[2]").shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3)); // Hobbies
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[8]/td[2]").shouldHave(text(picture)); // picture
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[9]/td[2]").shouldHave(text("г.Москва, ул.Академика Королева, д.12")); //address
-        $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[10]/td[2]").shouldHave(text(state + " " + city)); //state and city
+        $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName));
+        $x("//td[text()='Student Email']").parent().shouldHave(text(email));
+        $x("//td[text()='Gender']").parent().shouldHave(text(gender));
+        $x("//td[text()='Mobile']").parent().shouldHave(text(mobile));
+        $x("//td[text()='Date of Birth']").parent().shouldHave(text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth));
+        $x("//td[text()='Subjects']").parent().shouldHave(text(subject1+ ", "+ subject2));
+        $x("//td[text()='Hobbies']").parent().shouldHave(text(hobby1 + ", " + hobby2 + ", " + hobby3));
+        $x("//td[text()='Picture']").parent().shouldHave(text(picture));
+        $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
+        $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
 
         sleep(10000);
     }

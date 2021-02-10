@@ -55,7 +55,7 @@ public class RandomUtils {
     }
 
     public static String getRandomPhone() {
-        return getRandomLong(11111111111111111L, 99999999999999999L) + "";
+        return getRandomLong(111111111L, 9999999999L) + "";
     }
 
     public static String getRandomPhone(String code) {
