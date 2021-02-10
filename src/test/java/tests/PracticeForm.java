@@ -41,8 +41,6 @@ public class PracticeForm {
                 state = "NCR", // могу зарандомить, но тогда city не могу, пытался через if else - не вышло.
                 city = "Dehli";
 
-
-
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
@@ -65,6 +63,7 @@ public class PracticeForm {
         $("#city").click();
         $("#stateCity-wrapper").$(byText(city)).click();
         $("#submit").click();
+
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[1]/td[2]").shouldHave(text(firstName + " " + lastName));
         $x("/html/body/div[3]/div/div/div[2]/div/table/tbody/tr[2]/td[2]").shouldHave(text(email)); //mail
