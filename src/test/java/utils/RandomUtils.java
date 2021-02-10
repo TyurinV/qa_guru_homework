@@ -92,4 +92,135 @@ public class RandomUtils {
 
         return readyMessage;
     }
+
+
+    public static String getRandomMonth(int min, int max) {
+        String[] words4 = {"May", "April", "June"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomSubjects(int min, int max) {
+        String[] words4 = {"Civics", "Maths", "Hindi", "Arts"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomState(int min, int max) {
+        String[] words4 = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomHaryanaCity(int min, int max) {
+        String[] words4 = {"Karnal", "Panipat"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomNcrCity(int min, int max) {
+        String[] words4 = {"Delhi", "Noida", "Gurgaon"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomUttarCity(int min, int max) {
+        String[] words4 = {"Agra", "Merrut"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+    public static String getRandomRajasthanCity(int min, int max) {
+        String[] words4 = {"Jaipur", "Jaiselmer", "Haryana", "Rajasthan"};
+
+        StringBuilder message = new StringBuilder();
+        int messageLength = getRandomInt(min, max);
+        while (message.length() < messageLength) {
+            int wordIndex = getRandomInt(0, words4.length - 1);
+            message.append(words4[wordIndex] + " ");
+        }
+
+
+        String readyMessage = StringUtils.capitalize(message.toString())
+                .replace("  ", " ")
+                .replace(" ,", ",")
+                .replace(" .", ".").trim();
+
+        return readyMessage;
+    }
+
+
+
 }
