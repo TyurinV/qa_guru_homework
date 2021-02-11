@@ -24,7 +24,7 @@ public class PracticeForm {
 
         open("https://demoqa.com/automation-practice-form");
         String firstName = getRandomString(10),
-                lastName = getRandomString(9),
+                lastName = getRandomString(8),
                 email = getRandomEmail(),
                 gender = getRandomGender(1, 1),
                 mobile = getRandomPhone(),
