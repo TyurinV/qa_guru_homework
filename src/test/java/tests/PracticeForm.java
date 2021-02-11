@@ -38,7 +38,7 @@ public class PracticeForm {
                 hobby3 = "Music",
                 picture = "che.png",
                 currentAddress = getRandomString(50),
-                state = "NCR", // могу зарандомить, но тогда city не могу, пытался через if else - не вышло.
+                state = "NCR",
                 city = "Delhi";
 
         $("#firstName").setValue(firstName);
@@ -55,8 +55,6 @@ public class PracticeForm {
         $(byText(hobby2)).click();
         $(byText(hobby3)).click();
         $("#uploadPicture").uploadFromClasspath("img/" + picture);
-        //File file = new File("src/test/resources/img/" + picture); //file1 of 2
-        //$("#uploadPicture").uploadFile(file);              //file2 of 2
         $("#currentAddress").setValue(currentAddress);
         $("#state").click();
         $("#stateCity-wrapper").$(byText(state)).click();
@@ -76,7 +74,6 @@ public class PracticeForm {
         $x("//td[text()='Address']").parent().shouldHave(text(currentAddress));
         $x("//td[text()='State and City']").parent().shouldHave(text(state + " " + city));
 
-        sleep(10000);
     }
 
 
